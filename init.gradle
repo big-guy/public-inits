@@ -1,0 +1,12 @@
+// initscript must be first block in init.gradle to get the plugin on the path
+// Configuration of the buildscan plugin is done in cached init.gradle loaded by this file
+initscript {
+    def initScriptBootstrap
+    def localPath = System.env.LOCAL_INIT_SCRIPT_PATH
+    if (localPath) {
+        initScriptBootstrap = new File(localPath, "bootstrap.gradle")
+    } else {
+        initScriptBootstrap = "https://host.invalid/bootstrap.gradle"
+    }
+    apply from: initScriptBootstrap
+}
