@@ -6,7 +6,7 @@ initscript {
     if (localPath) {
         initScriptBootstrap = new File(localPath, "bootstrap.gradle")
     } else {
-        initScriptBootstrap = "https://host.invalid/bootstrap.gradle"
+        initScriptBootstrap = "https://raw.githubusercontent.com/big-guy/public-inits/master/bootstrap.gradle"
     }
     apply from: initScriptBootstrap
 }
